@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
   }
   std::this_thread::sleep_for(std::chrono::seconds(5));
   RCLCPP_ERROR_STREAM(rclcpp::get_logger("testing"), "First 5s");
-  // If I comment one line of the following it work as expected
+  // Uncommenting any of the following two lines, the bug doesn't occur
   sub1.reset();
   std::this_thread::sleep_for(std::chrono::seconds(5));
   RCLCPP_ERROR_STREAM(rclcpp::get_logger("testing"), "Second 5s");
